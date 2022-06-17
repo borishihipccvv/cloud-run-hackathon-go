@@ -43,7 +43,7 @@ func handler(w http.ResponseWriter, req *http.Request) {
 }
 
 func play(input ArenaUpdate) (response string) {
-	//log.Printf("IN: %#v", input)
+	log.Printf("IN: %#v", input)
 	//test
 	doubleMay := input.Links.Self.Href
 	doubleMayObj := input.Arena.State[doubleMay]
