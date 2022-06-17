@@ -99,7 +99,7 @@ func play(input ArenaUpdate) (response string) {
 		if key == doubleMay {
 			continue
 		}
-		log.Panicln("Chikan:" + key + " x:" + strconv.Itoa(chikan.X) + " y:" + strconv.Itoa(chikan.Y))
+		log.Println("Chikan:" + key + " x:" + strconv.Itoa(chikan.X) + " y:" + strconv.Itoa(chikan.Y))
 		if chikan.X == hit1x && chikan.Y == hit1y {
 			log.Println("Hit Chikan:" + key + " at hit1")
 			return "T"
