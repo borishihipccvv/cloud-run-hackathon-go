@@ -52,7 +52,8 @@ func play(input ArenaUpdate) (response string) {
 	doubleMayDirection := doubleMayObj.Direction
 	doubleMayX := doubleMayObj.X
 	doubleMayY := doubleMayObj.Y
-	fmt.Printf("DoubleMay URL:" + doubleMay + " areaXmax:" + strconv.Itoa(areaXmax) + " doubleMayX:" + strconv.Itoa(doubleMayX) + " areaYmax:" + strconv.Itoa(areaYmax) + " doubleMayY:" + strconv.Itoa(doubleMayY) + " doubleMayDirection:" + doubleMayDirection)
+	log.Printf("DoubleMay URL:" + doubleMay + " areaXmax:" + strconv.Itoa(areaXmax) + " doubleMayX:" + strconv.Itoa(doubleMayX) + " areaYmax:" + strconv.Itoa(areaYmax) + " doubleMayY:" + strconv.Itoa(doubleMayY) + " doubleMayDirection:" + doubleMayDirection)
+
 	commands := []string{"F", "R", "L", "T"}
 	rand := rand2.Intn(4)
 	return commands[rand]
