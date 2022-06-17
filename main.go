@@ -96,9 +96,10 @@ func play(input ArenaUpdate) (response string) {
 	log.Println("Hit 1 : " + strconv.Itoa(hit3x) + "," + strconv.Itoa(hit3y))
 	for key, chikan := range input.Arena.State {
 		//
-		if key == doubleMay {
-			continue
-		}
+		/*
+			if key == doubleMay {
+				continue
+			}*/
 		//log.Println("Chikan:" + key + " x:" + strconv.Itoa(chikan.X) + " y:" + strconv.Itoa(chikan.Y))
 		if chikan.X == hit1x && chikan.Y == hit1y {
 			log.Println("Hit Chikan:" + key + " at hit1")
