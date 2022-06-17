@@ -7,7 +7,6 @@ import (
 	rand2 "math/rand"
 	"net/http"
 	"os"
-	"strconv"
 )
 
 func main() {
@@ -43,7 +42,7 @@ func handler(w http.ResponseWriter, req *http.Request) {
 }
 
 func play(input ArenaUpdate) (response string) {
-	log.Printf("IN: %#v", input)
+	/*log.Printf("IN: %#v", input)
 	//test
 	doubleMay := input.Links.Self.Href
 	doubleMayObj := input.Arena.State[doubleMay]
@@ -56,7 +55,7 @@ func play(input ArenaUpdate) (response string) {
 	//Check chikan location
 	var hit1x, hit1y, hit2x, hit2y, hit3x, hit3y int
 	if doubleMayDirection == "E" {
-		log.Printf("Hit E")
+			log.Printf("Hit E")
 		hit1x = doubleMayX
 		hit2x = doubleMayX
 		hit3x = doubleMayX
@@ -65,7 +64,7 @@ func play(input ArenaUpdate) (response string) {
 		hit3y = doubleMayY - 3
 	}
 	if doubleMayDirection == "N" {
-		log.Printf("Hit N")
+			log.Printf("Hit N")
 		hit1x = doubleMayX
 		hit2x = doubleMayX
 		hit3x = doubleMayX
@@ -74,7 +73,7 @@ func play(input ArenaUpdate) (response string) {
 		hit3y = doubleMayY + 3
 	}
 	if doubleMayDirection == "W" {
-		log.Printf("Hit W")
+			log.Printf("Hit W")
 		hit1x = doubleMayX + 1
 		hit2x = doubleMayX + 2
 		hit3x = doubleMayX + 3
@@ -83,7 +82,7 @@ func play(input ArenaUpdate) (response string) {
 		hit3y = doubleMayY
 	}
 	if doubleMayDirection == "S" {
-		log.Printf("Hit S")
+			log.Printf("Hit S")
 		hit1x = doubleMayX - 1
 		hit2x = doubleMayX - 2
 		hit3x = doubleMayX - 3
@@ -100,8 +99,8 @@ func play(input ArenaUpdate) (response string) {
 			if key == doubleMay {
 				continue
 			}*/
-		//log.Println("Chikan:" + key + " x:" + strconv.Itoa(chikan.X) + " y:" + strconv.Itoa(chikan.Y))
-		if chikan.X == hit1x && chikan.Y == hit1y {
+	//log.Println("Chikan:" + key + " x:" + strconv.Itoa(chikan.X) + " y:" + strconv.Itoa(chikan.Y))
+	/*	if chikan.X == hit1x && chikan.Y == hit1y {
 			log.Println("Hit Chikan:" + key + " at hit1")
 			return "T"
 		}
@@ -114,8 +113,8 @@ func play(input ArenaUpdate) (response string) {
 			return "T"
 		}
 
-	}
-	commands := []string{"F", "R", "L"}
-	rand := rand2.Intn(3)
+	}*/
+	commands := []string{"F", "R", "L", "T"}
+	rand := rand2.Intn(4)
 	return commands[rand]
 }
