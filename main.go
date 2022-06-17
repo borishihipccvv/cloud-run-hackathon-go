@@ -73,7 +73,7 @@ func play(input ArenaUpdate) (response string) {
 		hit2y = doubleMayY + 2
 		hit3y = doubleMayY + 3
 	}
-	if doubleMayDirection == "S" {
+	if doubleMayDirection == "W" {
 		//	log.Printf("Hit S")
 		hit1x = doubleMayX + 1
 		hit2x = doubleMayX + 2
@@ -82,7 +82,7 @@ func play(input ArenaUpdate) (response string) {
 		hit2y = doubleMayY
 		hit3y = doubleMayY
 	}
-	if doubleMayDirection == "W" {
+	if doubleMayDirection == "S" {
 		//	log.Printf("Hit W")
 		hit1x = doubleMayX - 1
 		hit2x = doubleMayX - 2
