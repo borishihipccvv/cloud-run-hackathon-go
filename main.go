@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
-	rand2 "math/rand"
 	"net/http"
 	"os"
 	"strconv"
@@ -115,7 +114,8 @@ func play(input ArenaUpdate) (response string) {
 		}
 
 	}
-	commands := []string{"F", "R", "L"}
-	rand := rand2.Intn(3)
-	return commands[rand]
+	//commands := []string{"F", "R", "L"}
+	//rand := rand2.Intn(3)
+	//return commands[rand]
+	return "T"
 }
