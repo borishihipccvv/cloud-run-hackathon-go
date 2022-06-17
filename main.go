@@ -56,7 +56,7 @@ func play(input ArenaUpdate) (response string) {
 	//Check chikan location
 	var hit1x, hit1y, hit2x, hit2y, hit3x, hit3y int
 	if doubleMayDirection == "E" {
-		//	log.Printf("Hit N")
+		log.Printf("Hit E")
 		hit1x = doubleMayX
 		hit2x = doubleMayX
 		hit3x = doubleMayX
@@ -65,7 +65,7 @@ func play(input ArenaUpdate) (response string) {
 		hit3y = doubleMayY - 3
 	}
 	if doubleMayDirection == "N" {
-		//	log.Printf("Hit E")
+		log.Printf("Hit N")
 		hit1x = doubleMayX
 		hit2x = doubleMayX
 		hit3x = doubleMayX
@@ -74,7 +74,7 @@ func play(input ArenaUpdate) (response string) {
 		hit3y = doubleMayY + 3
 	}
 	if doubleMayDirection == "W" {
-		//	log.Printf("Hit S")
+		log.Printf("Hit W")
 		hit1x = doubleMayX + 1
 		hit2x = doubleMayX + 2
 		hit3x = doubleMayX + 3
@@ -83,7 +83,7 @@ func play(input ArenaUpdate) (response string) {
 		hit3y = doubleMayY
 	}
 	if doubleMayDirection == "S" {
-		//	log.Printf("Hit W")
+		log.Printf("Hit S")
 		hit1x = doubleMayX - 1
 		hit2x = doubleMayX - 2
 		hit3x = doubleMayX - 3
@@ -92,8 +92,8 @@ func play(input ArenaUpdate) (response string) {
 		hit3y = doubleMayY
 	}
 	log.Println("Hit 1 : " + strconv.Itoa(hit1x) + "," + strconv.Itoa(hit1y))
-	log.Println("Hit 1 : " + strconv.Itoa(hit2x) + "," + strconv.Itoa(hit2y))
-	log.Println("Hit 1 : " + strconv.Itoa(hit3x) + "," + strconv.Itoa(hit3y))
+	log.Println("Hit 2 : " + strconv.Itoa(hit2x) + "," + strconv.Itoa(hit2y))
+	log.Println("Hit 3 : " + strconv.Itoa(hit3x) + "," + strconv.Itoa(hit3y))
 	for key, chikan := range input.Arena.State {
 		//
 		/*
