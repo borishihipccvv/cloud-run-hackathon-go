@@ -114,7 +114,7 @@ func play(input ArenaUpdate) (response string) {
 		}
 
 	}
-	commands := []string{"F", "R", "L", "T"}
-	rand := rand2.Intn(4)
+	commands := []string{"F", "R", "L"}
+	rand := rand2.Intn(3)
 	return commands[rand]
 }
