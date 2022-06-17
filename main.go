@@ -99,6 +99,17 @@ func play(input ArenaUpdate) (response string) {
 		if key == doubleMay {
 			continue
 		}
+		log.Panicln("Chikan:" + key + " x:" + strconv.Itoa(chikan.X) + " y:" + strconv.Itoa(chikan.Y))
+		if chikan.X == hit1x && chikan.Y == hit1y {
+			return "T"
+		}
+		if chikan.X == hit2x && chikan.Y == hit2y {
+			return "T"
+		}
+		if chikan.X == hit3x && chikan.Y == hit3y {
+			return "T"
+		}
+
 	}
 	commands := []string{"F", "R", "L", "T"}
 	rand := rand2.Intn(4)
