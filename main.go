@@ -7,6 +7,7 @@ import (
 	rand2 "math/rand"
 	"net/http"
 	"os"
+	"strconv"
 )
 
 func main() {
@@ -44,6 +45,14 @@ func handler(w http.ResponseWriter, req *http.Request) {
 func play(input ArenaUpdate) (response string) {
 	log.Printf("IN: %#v", input)
 	//test
+	doubleMay := input.Links.Self.Href
+	doubleMayObj := input.Arena.State[doubleMay]
+	areaXmax := input.Arena.Dimensions[0]
+	areaYmax := input.Arena.Dimensions[1]
+	doubleMayDirection := doubleMayObj.Direction
+	doubleMayX := doubleMayObj.X
+	doubleMayY := doubleMayObj.Y
+	fmt.Printf("DoubleMay URL:" + doubleMay + " areaXmax:" + strconv.Itoa(areaXmax) + " doubleMayX:" + strconv.Itoa(doubleMayX) + " areaYmax:" + strconv.Itoa(areaYmax) + " doubleMayY:" + strconv.Itoa(doubleMayY) + " doubleMayDirection:" + doubleMayDirection)
 	commands := []string{"F", "R", "L", "T"}
 	rand := rand2.Intn(4)
 	return commands[rand]
