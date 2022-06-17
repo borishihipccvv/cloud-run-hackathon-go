@@ -55,7 +55,7 @@ func play(input ArenaUpdate) (response string) {
 	log.Printf("DoubleMay URL:" + doubleMay + " areaXmax:" + strconv.Itoa(areaXmax) + " doubleMayX:" + strconv.Itoa(doubleMayX) + " areaYmax:" + strconv.Itoa(areaYmax) + " doubleMayY:" + strconv.Itoa(doubleMayY) + " doubleMayDirection:" + doubleMayDirection)
 	//Check chikan location
 	var hit1x, hit1y, hit2x, hit2y, hit3x, hit3y int
-	if doubleMayDirection == "N" {
+	if doubleMayDirection == "W" {
 		//	log.Printf("Hit N")
 		hit1x = doubleMayX
 		hit2x = doubleMayX
@@ -64,7 +64,7 @@ func play(input ArenaUpdate) (response string) {
 		hit2y = doubleMayY - 2
 		hit3y = doubleMayY - 3
 	}
-	if doubleMayDirection == "E" {
+	if doubleMayDirection == "S" {
 		//	log.Printf("Hit E")
 		hit1x = doubleMayX
 		hit2x = doubleMayX
@@ -73,7 +73,7 @@ func play(input ArenaUpdate) (response string) {
 		hit2y = doubleMayY + 2
 		hit3y = doubleMayY + 3
 	}
-	if doubleMayDirection == "S" {
+	if doubleMayDirection == "N" {
 		//	log.Printf("Hit S")
 		hit1x = doubleMayX + 1
 		hit2x = doubleMayX + 2
@@ -82,7 +82,7 @@ func play(input ArenaUpdate) (response string) {
 		hit2y = doubleMayY
 		hit3y = doubleMayY
 	}
-	if doubleMayDirection == "W" {
+	if doubleMayDirection == "E" {
 		//	log.Printf("Hit W")
 		hit1x = doubleMayX - 1
 		hit2x = doubleMayX - 2
