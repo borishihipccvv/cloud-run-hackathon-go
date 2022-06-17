@@ -54,22 +54,47 @@ func play(input ArenaUpdate) (response string) {
 	doubleMayY := doubleMayObj.Y
 	log.Printf("DoubleMay URL:" + doubleMay + " areaXmax:" + strconv.Itoa(areaXmax) + " doubleMayX:" + strconv.Itoa(doubleMayX) + " areaYmax:" + strconv.Itoa(areaYmax) + " doubleMayY:" + strconv.Itoa(doubleMayY) + " doubleMayDirection:" + doubleMayDirection)
 	//Check chikan location
+	var hit1x, hit1y, hit2x, hit2y, hit3x, hit3y int
+	if doubleMayDirection == "N" {
+		//	log.Printf("Hit N")
+		hit1x = doubleMayX
+		hit2x = doubleMayX
+		hit3x = doubleMayX
+		hit1y = doubleMayY - 1
+		hit2y = doubleMayY - 2
+		hit3y = doubleMayY - 3
+	}
+	if doubleMayDirection == "E" {
+		//	log.Printf("Hit E")
+		hit1x = doubleMayX
+		hit2x = doubleMayX
+		hit3x = doubleMayX
+		hit1y = doubleMayY + 1
+		hit2y = doubleMayY + 2
+		hit3y = doubleMayY + 3
+	}
+	if doubleMayDirection == "S" {
+		//	log.Printf("Hit S")
+		hit1x = doubleMayX + 1
+		hit2x = doubleMayX + 2
+		hit3x = doubleMayX + 3
+		hit1y = doubleMayY
+		hit2y = doubleMayY
+		hit3y = doubleMayY
+	}
+	if doubleMayDirection == "W" {
+		//	log.Printf("Hit W")
+		hit1x = doubleMayX - 1
+		hit2x = doubleMayX - 2
+		hit3x = doubleMayX - 3
+		hit1y = doubleMayY
+		hit2y = doubleMayY
+		hit3y = doubleMayY
+	}
 	for key, chikan := range input.Arena.State {
 		log.Println("Key:", key, "=>", "Element:", chikan)
 		if key == doubleMay {
 			continue
-		}
-		if doubleMayDirection == "N" {
-			log.Printf("Hit N")
-		}
-		if doubleMayDirection == "E" {
-			log.Printf("Hit E")
-		}
-		if doubleMayDirection == "S" {
-			log.Printf("Hit S")
-		}
-		if doubleMayDirection == "W" {
-			log.Printf("Hit W")
 		}
 	}
 	commands := []string{"F", "R", "L", "T"}
