@@ -95,18 +95,21 @@ func play(input ArenaUpdate) (response string) {
 	log.Println("Hit 1 : " + strconv.Itoa(hit2x) + "," + strconv.Itoa(hit2y))
 	log.Println("Hit 1 : " + strconv.Itoa(hit3x) + "," + strconv.Itoa(hit3y))
 	for key, chikan := range input.Arena.State {
-		log.Println("Key:", key, "=>", "Element:", chikan)
+		//
 		if key == doubleMay {
 			continue
 		}
 		log.Panicln("Chikan:" + key + " x:" + strconv.Itoa(chikan.X) + " y:" + strconv.Itoa(chikan.Y))
 		if chikan.X == hit1x && chikan.Y == hit1y {
+			log.Println("Hit Chikan:" + key + " at hit1")
 			return "T"
 		}
 		if chikan.X == hit2x && chikan.Y == hit2y {
+			log.Println("Hit Chikan:" + key + " at hit2")
 			return "T"
 		}
 		if chikan.X == hit3x && chikan.Y == hit3y {
+			log.Println("Hit Chikan:" + key + " at hit3")
 			return "T"
 		}
 
